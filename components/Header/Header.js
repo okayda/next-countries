@@ -9,9 +9,12 @@ const Header = function () {
 
       <div className={classes.header__toggle}>
         <input type="checkbox" className="checkbox" id="checkbox" />
+
         <label htmlFor="checkbox" className="checkbox-label">
           <BsFillMoonFill className={classes.moon} />
+
           <BsSunFill className={classes.sun} />
+
           <span className="ball"></span>
         </label>
       </div>

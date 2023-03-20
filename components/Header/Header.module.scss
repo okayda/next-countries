@@ -5,8 +5,9 @@
   justify-content: space-between;
   align-items: center;
 
-  box-shadow: rgba(0, 0, 0, 0.01) 0px 3px 6px, rgba(0, 0, 0, 0.18) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.01) 0px 2px 5px, rgba(0, 0, 0, 0.18) 0px 2px 5px;
   padding: 2.8rem 2rem;
+  margin-bottom: 2.6rem;
 
   a:link,
   a:visited {
@@ -21,7 +22,7 @@
     }
 
     label {
-      background-color: #444;
+      background-color: #42454e;
       width: 62px;
       height: 32px;
       border-radius: 50px;
