@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Search from "../components/Search/Search";
+import DropDown from "../components/DropDown/DropDown";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
 
       <Search />
+      <DropDown />
     </>
   );
 }
