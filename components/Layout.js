@@ -1,9 +1,10 @@
+import Background from "./Background";
 import Header from "./Header/Header";
 
 const Layout = function ({ children }) {
   return (
     <>
-      <div id="background"></div>
+      <Background />
       <Header />
       <main>{children}</main>
     </>

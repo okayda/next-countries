@@ -8,7 +8,7 @@ const Search = function () {
           <input
             type="search"
             name="search"
-            autocomplete="off"
+            autoComplete="off"
             placeholder="Search for a country..."
             className={classes.search__input}
           />

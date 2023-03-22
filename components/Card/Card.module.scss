@@ -1,0 +1,39 @@
+@use "../../scss" as *;
+
+.card {
+  background-color: $light;
+  max-width: 26rem;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+  // box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: rgba(0, 0, 0, 0.01) 0px 2px 5px, rgba(0, 0, 0, 0.08) 0px 2px 5px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  figure {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    padding: 1.6rem 1.8rem 3rem;
+
+    h2 {
+      font-weight: 900;
+      font-size: 1.74rem;
+      margin-bottom: 1.4rem;
+    }
+    ul {
+      font-size: 1.45rem;
+    }
+
+    &--title {
+      font-weight: 600;
+    }
+  }
+}

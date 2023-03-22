@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Search from "../components/Search/Search";
 import DropDown from "../components/DropDown/DropDown";
+import Card from "../components/Card/Card";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
 
       <Search />
       <DropDown />
+      <Card />
     </>
   );
 }

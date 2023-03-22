@@ -1,0 +1,87 @@
+body {
+  background: linear-gradient(90deg, #a3e3ff 0%, #ffd7f1 60%);
+}
+
+#background {
+  position: fixed;
+  z-index: -100;
+  width: 100%;
+  height: 100vh;
+}
+
+.circle-bg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  & > div {
+    position: absolute;
+    opacity: 0.5;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(30px);
+    filter: blur(1px);
+
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+.circle-1 {
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28rem;
+  height: 28rem;
+  background: linear-gradient(#ffee55, #fdee99);
+  border-radius: 100%;
+}
+
+.circle-2 {
+  bottom: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30rem;
+  height: 30rem;
+  background: linear-gradient(-26deg, #189e83, #1bba9a);
+  border-radius: 100%;
+}
+
+.circle-3 {
+  top: 26rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20rem;
+  height: 20rem;
+  background: rgba(87, 80, 233);
+  border-radius: 100%;
+}
+
+.circle-4 {
+  top: 26rem;
+  left: -4rem;
+  width: 20rem;
+  height: 20rem;
+  background: linear-gradient(-26deg, #e950d1, #f980d9);
+  border-radius: 100%;
+}
+
+.circle-5 {
+  top: 26rem;
+  right: -4rem;
+  width: 20rem;
+  height: 20rem;
+  background: #f67280;
+  border-radius: 100%;
+}
