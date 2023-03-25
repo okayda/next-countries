@@ -1,0 +1,29 @@
+@mixin tablet() {
+  @media only screen and (min-width: 700px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media only screen and (min-width: 700px) {
+    @content;
+  }
+}
+
+@mixin s-desktop() {
+  @media only screen and (min-width: 1050px) {
+    @content;
+  }
+}
+
+@mixin m-desktop() {
+  @media only screen and (min-width: 1450px) {
+    @content;
+  }
+}
+
+@mixin l-desktop() {
+  @media only screen and (min-width: 2000px) {
+    @content;
+  }
+}

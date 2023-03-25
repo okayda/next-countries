@@ -1,7 +1,6 @@
 import Head from "next/head";
-import Search from "../components/Search/Search";
-import DropDown from "../components/DropDown/DropDown";
-import Card from "../components/Card/Card";
+import CardHeader from "../components/CardHeader/CardHeader";
+import GroupCard from "../components/Card/GroupCard";
 
 export default function Home() {
   return (
@@ -13,9 +12,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Search />
-      <DropDown />
-      <Card />
+      <CardHeader />
+
+      <GroupCard />
     </>
   );
 }

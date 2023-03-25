@@ -1,5 +1,7 @@
+@use "./index" as *;
+
 body {
-  background: linear-gradient(90deg, #a3e3ff 0%, #ffd7f1 60%);
+  background: linear-gradient(90deg, #f9f9f4 50%, #fdf8e5 50%);
 }
 
 #background {
@@ -13,10 +15,23 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
+  margin: 0 auto;
+
+  @include s-desktop() {
+    max-width: 88rem;
+  }
+
+  @include m-desktop() {
+    max-width: 118rem;
+  }
+
+  @include l-desktop() {
+    max-width: 148rem;
+  }
 
   & > div {
     position: absolute;
-    opacity: 0.5;
+    opacity: 0.8;
   }
 
   &::before {
@@ -28,9 +43,9 @@ body {
     right: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(30px);
-    filter: blur(1px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(50px);
+    filter: blur(50px);
 
     z-index: 1;
     width: 100%;
@@ -39,29 +54,31 @@ body {
 }
 
 .circle-1 {
-  top: 3rem;
+  top: 10rem;
   left: 50%;
   transform: translateX(-50%);
+
   width: 28rem;
   height: 28rem;
-  background: linear-gradient(#ffee55, #fdee99);
+  background: #ff5599;
   border-radius: 100%;
 }
 
 .circle-2 {
-  bottom: 8rem;
+  top: 34rem;
   left: 50%;
   transform: translateX(-50%);
+
   width: 30rem;
   height: 30rem;
-  background: linear-gradient(-26deg, #189e83, #1bba9a);
+  background: linear-gradient(-26deg, #6bf3d8, #1bba9a);
   border-radius: 100%;
 }
 
 .circle-3 {
-  top: 26rem;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 25rem;
+  left: 54%;
+
   width: 20rem;
   height: 20rem;
   background: rgba(87, 80, 233);
@@ -69,8 +86,9 @@ body {
 }
 
 .circle-4 {
-  top: 26rem;
-  left: -4rem;
+  top: 25rem;
+  right: 54%;
+
   width: 20rem;
   height: 20rem;
   background: linear-gradient(-26deg, #e950d1, #f980d9);
@@ -78,10 +96,29 @@ body {
 }
 
 .circle-5 {
-  top: 26rem;
-  right: -4rem;
+  top: 55rem;
+  left: 50%;
+  transform: translateX(-50%);
+
   width: 20rem;
   height: 20rem;
-  background: #f67280;
+  background: #ce81f8;
   border-radius: 100%;
+}
+
+@include s-desktop() {
+  .circle-1 {
+  }
+
+  .circle-2 {
+  }
+
+  .circle-3 {
+  }
+
+  .circle-4 {
+  }
+
+  .circle-5 {
+  }
 }

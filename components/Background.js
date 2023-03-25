@@ -1,5 +1,3 @@
-// import "./Background.scss";
-
 const Background = function () {
   return (
     <div id="background">

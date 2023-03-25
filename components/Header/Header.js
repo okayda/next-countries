@@ -11,9 +11,9 @@ const Header = function () {
         <input type="checkbox" className="checkbox" id="checkbox" />
 
         <label htmlFor="checkbox" className="checkbox-label">
-          <BsFillMoonFill className={classes.moon} />
+          <BsFillMoonFill className={classes.sun} />
 
-          <BsSunFill className={classes.sun} />
+          <BsSunFill className={classes.moon} />
 
           <span className="ball"></span>
         </label>

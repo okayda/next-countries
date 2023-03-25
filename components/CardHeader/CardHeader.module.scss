@@ -1,0 +1,24 @@
+@use "../../scss/index" as *;
+
+.wrapper {
+  @include tablet() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0 auto 4rem;
+    max-width: 55.4rem;
+  }
+
+  @include s-desktop() {
+    max-width: 87.14rem;
+  }
+
+  @include m-desktop() {
+    max-width: 117.3rem;
+  }
+
+  @include l-desktop() {
+    max-width: 148rem;
+  }
+}

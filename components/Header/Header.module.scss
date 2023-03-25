@@ -1,7 +1,9 @@
 @use "../../scss" as *;
 
 .header {
-  background-color: $light;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,10 +11,8 @@
   padding: 2.8rem 2rem;
   margin-bottom: 2.6rem;
 
-  background: rgba(255, 255, 255, 0.3);
   box-shadow: rgba(0, 0, 0, 0.01) 0px 2px 5px, rgba(0, 0, 0, 0.08) 0px 2px 5px;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.9);
 
   a:link,
   a:visited {
@@ -27,7 +27,8 @@
     }
 
     label {
-      background-color: #42454e;
+      background-color: #1bba9a;
+
       width: 62px;
       height: 32px;
       border-radius: 50px;
@@ -45,11 +46,11 @@
     }
 
     .moon {
-      fill: #f1c40f;
+      fill: #ffff44;
     }
 
     .sun {
-      fill: #f39c12;
+      fill: #ffbb4d;
     }
 
     label span {
@@ -60,11 +61,14 @@
       left: 3px;
       top: 4px;
       border-radius: 50%;
-      transition: transform 0.2s linear;
     }
 
     input:checked + label span {
       transform: translateX(30px);
+    }
+
+    input:checked + label {
+      background-color: #42454e;
     }
   }
 }

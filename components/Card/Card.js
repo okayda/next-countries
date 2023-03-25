@@ -12,7 +12,9 @@ const Card = function () {
         <h2>United States of America</h2>
         <ul>
           <li>
-            <span className={classes["card__content--title"]}></span>
+            <span className={classes["card__content--title"]}>
+              Population:{" "}
+            </span>
             <span className={classes["card__content--value"]}>100,000,00</span>
           </li>
           <li>
