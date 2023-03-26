@@ -1,7 +1,7 @@
 @use "./index" as *;
 
 body {
-  background: linear-gradient(90deg, #f9f9f4 50%, #fdf8e5 50%);
+  background: linear-gradient(90deg, #fcebeb 0, #eeeffb 58%);
 }
 
 #background {
@@ -31,7 +31,7 @@ body {
 
   & > div {
     position: absolute;
-    opacity: 0.8;
+    opacity: 0.35;
   }
 
   &::before {
@@ -44,9 +44,8 @@ body {
     width: 100%;
     height: 100vh;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(50px);
-    filter: blur(50px);
-
+    backdrop-filter: blur(40px);
+    filter: blur(40px);
     z-index: 1;
     width: 100%;
     height: 100vh;
@@ -54,30 +53,29 @@ body {
 }
 
 .circle-1 {
-  top: 10rem;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 70rem;
+  left: 67%;
 
-  width: 28rem;
-  height: 28rem;
-  background: #ff5599;
+  width: 20rem;
+  height: 20rem;
+  background: #fc448ea1;
   border-radius: 100%;
 }
 
 .circle-2 {
-  top: 34rem;
+  top: 40rem;
   left: 50%;
   transform: translateX(-50%);
 
-  width: 30rem;
-  height: 30rem;
+  width: 26rem;
+  height: 26rem;
   background: linear-gradient(-26deg, #6bf3d8, #1bba9a);
   border-radius: 100%;
 }
 
 .circle-3 {
-  top: 25rem;
-  left: 54%;
+  top: 43rem;
+  left: 67%;
 
   width: 20rem;
   height: 20rem;
@@ -86,8 +84,8 @@ body {
 }
 
 .circle-4 {
-  top: 25rem;
-  right: 54%;
+  top: 43rem;
+  right: 67%;
 
   width: 20rem;
   height: 20rem;
@@ -96,9 +94,8 @@ body {
 }
 
 .circle-5 {
-  top: 55rem;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 70rem;
+  right: 67%;
 
   width: 20rem;
   height: 20rem;

@@ -4,15 +4,34 @@
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(5px);
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
   padding: 2.8rem 2rem;
   margin-bottom: 2.6rem;
 
   box-shadow: rgba(0, 0, 0, 0.01) 0px 2px 5px, rgba(0, 0, 0, 0.08) 0px 2px 5px;
   border: 1px solid rgba(255, 255, 255, 0.9);
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet() {
+      max-width: $t-max;
+      margin: 0 auto;
+    }
+
+    @include s-desktop() {
+      max-width: $s-max;
+    }
+
+    @include m-desktop() {
+      max-width: $m-max;
+    }
+
+    @include l-desktop() {
+      max-width: $l-max;
+    }
+  }
 
   a:link,
   a:visited {

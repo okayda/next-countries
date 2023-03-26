@@ -9,23 +9,23 @@
   gap: 3.4rem;
 
   @include tablet() {
+    max-width: $t-max;
     grid-template-columns: 1fr 1fr;
-    max-width: 55.4rem;
   }
 
   @include s-desktop() {
+    max-width: $s-max;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 4.4rem;
-    max-width: 87.14rem;
   }
 
   @include m-desktop() {
+    max-width: $m-max;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    max-width: 117.3rem;
   }
 
   @include l-desktop() {
+    max-width: $l-max;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    max-width: 148rem;
   }
 }

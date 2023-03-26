@@ -7,18 +7,18 @@
     justify-content: space-between;
 
     margin: 0 auto 4rem;
-    max-width: 55.4rem;
+    max-width: $t-max;
   }
 
   @include s-desktop() {
-    max-width: 87.14rem;
+    max-width: $s-max;
   }
 
   @include m-desktop() {
-    max-width: 117.3rem;
+    max-width: $m-max;
   }
 
   @include l-desktop() {
-    max-width: 148rem;
+    max-width: $l-max;
   }
 }

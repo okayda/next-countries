@@ -1,3 +1,5 @@
+import { FcSearch } from "react-icons/fc";
+
 import classes from "./Search.module.scss";
 
 const Search = function () {
@@ -12,11 +14,14 @@ const Search = function () {
             placeholder="Search for a country..."
             className={classes.search__input}
           />
-          <input
+          {/* <input
             type="submit"
-            value="Find"
+            value={BsSearch}
             className={classes.search__submit}
-          />
+          /> */}
+          <button className={classes.search__submit}>
+            <FcSearch />
+          </button>
         </div>
       </form>
     </div>

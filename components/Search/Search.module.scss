@@ -19,13 +19,11 @@
 
   &__form {
     width: 100%;
-    background: rgba(255, 255, 255, 0.05);
+    background-color: #fff;
     backdrop-filter: blur(5px);
 
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-
-    border: 1px solid rgba(255, 255, 255, 0.85);
 
     border-radius: 4px;
     font-size: 1.54rem;
@@ -36,13 +34,11 @@
     }
 
     input[type="search"],
-    input[type="submit"] {
+    button {
       border-radius: 2px;
     }
 
     input[type="search"] {
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(5px);
       color: #42454e;
       padding: 0.6rem 0.54rem;
       font-weight: 600;
@@ -66,10 +62,6 @@
     appearance: none;
   }
 
-  input[type="submit"] {
-    cursor: pointer;
-  }
-
   &__input {
     flex-grow: 1;
   }
@@ -80,9 +72,8 @@
   }
 
   &__submit {
-    background-color: #45ffda;
-    color: #024e6e;
-    padding: 0.6rem;
+    font-size: 2rem;
+    padding: 0.6rem 1.2rem;
     font-weight: 600;
     letter-spacing: 0.7px;
   }
