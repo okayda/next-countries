@@ -2,7 +2,7 @@ import Head from "next/head";
 import CardHeader from "../components/CardHeader/CardHeader";
 import GroupCard from "../components/Card/GroupCard";
 
-export default function Home() {
+export default function Home({ countries }) {
   return (
     <>
       <Head>
@@ -14,7 +14,18 @@ export default function Home() {
 
       <CardHeader />
 
-      <GroupCard />
+      <GroupCard countries={countries} />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch("https://restcountries.com/v3.1/all");
+  const data = await res.json();
+
+  return {
+    props: {
+      countries: data,
+    },
+  };
 }

@@ -1,7 +1,7 @@
 @use "./index" as *;
 
 body {
-  background: linear-gradient(90deg, #fcebeb 0, #eeeffb 58%);
+  background: linear-gradient(90deg, #faecec 0, #eceefb 58%);
 }
 
 #background {
@@ -31,7 +31,7 @@ body {
 
   & > div {
     position: absolute;
-    opacity: 0.35;
+    opacity: 0.5;
   }
 
   &::before {
@@ -58,11 +58,12 @@ body {
 
   width: 20rem;
   height: 20rem;
-  background: #fc448ea1;
-  border-radius: 100%;
+  background-color: #49dcf6bb;
 }
 
 .circle-2 {
+  display: none;
+
   top: 40rem;
   left: 50%;
   transform: translateX(-50%);
@@ -70,17 +71,17 @@ body {
   width: 26rem;
   height: 26rem;
   background: linear-gradient(-26deg, #6bf3d8, #1bba9a);
-  border-radius: 100%;
 }
 
 .circle-3 {
+  display: none;
+
   top: 43rem;
   left: 67%;
 
   width: 20rem;
   height: 20rem;
-  background: rgba(87, 80, 233);
-  border-radius: 100%;
+  background: #938ef7;
 }
 
 .circle-4 {
@@ -89,33 +90,45 @@ body {
 
   width: 20rem;
   height: 20rem;
-  background: linear-gradient(-26deg, #e950d1, #f980d9);
-  border-radius: 100%;
+  background: #938ef7;
 }
 
 .circle-5 {
+  display: none;
+
   top: 70rem;
   right: 67%;
 
   width: 20rem;
   height: 20rem;
-  background: #ce81f8;
-  border-radius: 100%;
+  background-color: #49dcf6bb;
 }
 
-@include s-desktop() {
-  .circle-1 {
-  }
+.circle-6 {
+  top: 5rem;
+  left: 67%;
 
-  .circle-2 {
-  }
+  width: 20rem;
+  height: 20rem;
+  background: #6ff76ca1;
+}
 
-  .circle-3 {
-  }
+.circle-7 {
+  display: none;
 
-  .circle-4 {
-  }
+  top: 5rem;
+  right: 67%;
 
-  .circle-5 {
+  width: 20rem;
+  height: 20rem;
+  background: #f6df8d;
+}
+
+@include tablet() {
+  .circle-2,
+  .circle-3,
+  .circle-5,
+  .circle-7 {
+    display: block;
   }
 }
