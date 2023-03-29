@@ -1,25 +1,25 @@
-const ListOne = function ({ title }) {
+const ListOne = function ({ title, data }) {
   return (
     <ul>
       <li>
         <span className={title}>Native Name: </span>
-        <span>Belgie</span>
+        <span>{data.native}</span>
       </li>
       <li>
         <span className={title}>Population: </span>
-        <span>100,000,00</span>
+        <span>{data.population}</span>
       </li>
       <li>
         <span className={title}>Region: </span>
-        <span>Europe</span>
+        <span>{data.region}</span>
       </li>
       <li>
         <span className={title}>Sub Region: </span>
-        <span>Western Europe</span>
+        <span>{data.subregion}</span>
       </li>
       <li>
         <span className={title}>Capital: </span>
-        <span>Brussels</span>
+        <span>{data.capital}</span>
       </li>
     </ul>
   );

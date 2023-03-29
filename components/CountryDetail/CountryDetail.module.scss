@@ -11,13 +11,13 @@
   }
 
   &__btn {
-    display: flex;
-    gap: 0.6rem;
-    align-items: center;
+    box-shadow: $shadow;
 
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    background-color: $light;
     font-size: 1.45rem;
     padding: 0.45rem 1.4rem;
     border-radius: 3px;
@@ -76,19 +76,20 @@
     a:link,
     a:visited {
       display: flex;
-      gap: 0.5rem;
       align-items: center;
+      gap: 0.5rem;
 
       svg {
         width: 1.6rem;
         height: 1.6rem;
       }
 
-      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-      background-color: #fff;
+      box-shadow: $shadow;
+
+      background-color: $light;
+
       font-size: 1.4rem;
-      padding: 0.5rem 1rem 0.4rem;
+      padding: 0.5rem 1rem 0.45rem;
       border-radius: 3px;
       font-weight: 900;
     }
@@ -98,6 +99,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 3rem;
+
     margin-bottom: 4rem;
 
     @include s-desktop() {
@@ -135,8 +137,8 @@
     }
 
     h2 {
-      font-weight: 600;
-      font-size: 1.8rem;
+      font-weight: 900;
+      font-size: 1.9rem;
       margin-bottom: 1.4rem;
 
       @include s-desktop() {
@@ -152,18 +154,18 @@
 
     a:link,
     a:visited {
+      box-shadow: $shadow;
+
+      display: inline-block;
+
       background-color: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(5px);
       border: 1px solid rgba(255, 255, 255, 0.9);
-
       letter-spacing: 0.5px;
-
-      display: inline-block;
-      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
       border-radius: 3px;
       font-size: 1.46rem;
       padding: 0.5rem 1.5rem;
+      font-weight: 600;
     }
   }
 }

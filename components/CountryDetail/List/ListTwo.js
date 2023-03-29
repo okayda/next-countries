@@ -1,17 +1,17 @@
-const ListTwo = function ({ title }) {
+const ListTwo = function ({ title, data }) {
   return (
     <ul>
       <li>
         <span className={title}>Top Level Domain: </span>
-        <span>.be</span>
+        <span>{data.domain}</span>
       </li>
       <li>
         <span className={title}>Currencies: </span>
-        <span>Euro</span>
+        <span>{data.currency}</span>
       </li>
       <li>
         <span className={title}>Languages: </span>
-        <span>Dutch, French, German</span>
+        <span>{data.languages}</span>
       </li>
     </ul>
   );

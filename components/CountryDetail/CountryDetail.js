@@ -1,5 +1,6 @@
+import { useRouter } from "next/router";
+
 import classes from "./CountryDetail.module.scss";
-import flag from "../../assets/USA.svg";
 
 import ListOne from "./List/ListOne";
 import ListTwo from "./List/ListTwo";
@@ -8,10 +9,35 @@ import BorderList from "./List/BorderList";
 import { BsGlobeAmericas } from "react-icons/bs";
 import { BiArrowBack } from "react-icons/bi";
 
-const CountryDetail = function () {
+const CountryDetail = function ({ data }) {
+  console.log(data);
+
+  const router = useRouter();
+
+  const backHander = function () {
+    router.back();
+  };
+
+  const flag = data.flags.svg;
+  const country = data.translations.cym.common;
+
+  const oneObj = {
+    native: Object.values(data.name.nativeName)[0].common,
+    population: data.population,
+    region: data.region,
+    subregion: data.subregion,
+    capital: data.capital || "N/A",
+  };
+
+  const twoObj = {
+    domain: data.tld || "N/A",
+    currency: Object.values(data.currencies)[0].name,
+    languages: Object.values(data.languages).join(", "),
+  };
+
   return (
     <div className={classes.detail}>
-      <button className={classes.detail__btn}>
+      <button onClick={backHander} className={classes.detail__btn}>
         <BiArrowBack />
         Back
       </button>
@@ -23,7 +49,7 @@ const CountryDetail = function () {
 
         <div>
           <div className={classes.detail__title}>
-            <h1>United States</h1>
+            <h1>{country}</h1>
             <a href="#">
               Location <BsGlobeAmericas />
             </a>
@@ -31,8 +57,14 @@ const CountryDetail = function () {
 
           <div className={classes["detail__list-wrapper"]}>
             <div className={classes.detail__contents}>
-              <ListOne title={classes["detail__contents--title"]} />
-              <ListTwo title={classes["detail__contents--title"]} />
+              <ListOne
+                title={classes["detail__contents--title"]}
+                data={oneObj}
+              />
+              <ListTwo
+                title={classes["detail__contents--title"]}
+                data={twoObj}
+              />
             </div>
 
             <div className={classes.detail__borders}>
