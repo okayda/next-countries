@@ -1,8 +1,15 @@
+import { REGIONS } from "../../config";
 import { RiArrowDropUpLine } from "react-icons/ri";
-
 import classes from "./DropDown.module.scss";
 
-const DropDown = function ({ updateRegion }) {
+const capitilize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
+const DropDown = function ({ currRegion, updateRegion }) {
+  const regionHandler = function (region) {
+    if (currRegion === region) return;
+    updateRegion(region);
+  };
+
   return (
     <div className={classes.dropdown}>
       <div className={classes.dropdown__wrapper}>
@@ -13,32 +20,13 @@ const DropDown = function ({ updateRegion }) {
           </button>
 
           <ul className={classes.dropdown__list}>
-            <li>
-              <button onClick={updateRegion.bind(null, "all")}>All</button>
-            </li>
-            <li>
-              <button onClick={updateRegion.bind(null, "africa")}>
-                Africa
-              </button>
-            </li>
-            <li>
-              <button onClick={updateRegion.bind(null, "america")}>
-                America
-              </button>
-            </li>
-            <li>
-              <button onClick={updateRegion.bind(null, "asia")}>Asia</button>
-            </li>
-            <li>
-              <button onClick={updateRegion.bind(null, "europe")}>
-                Europe
-              </button>
-            </li>
-            <li>
-              <button onClick={updateRegion.bind(null, "oceania")}>
-                Oceania
-              </button>
-            </li>
+            {REGIONS.map((region) => (
+              <li key={region}>
+                <button onClick={() => regionHandler(region)}>
+                  {capitilize(region)}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

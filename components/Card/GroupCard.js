@@ -5,7 +5,7 @@ const GroupCard = function ({ countries }) {
   return (
     <div className={classes.group}>
       {countries.map((country) => (
-        <Card data={country} />
+        <Card key={country.name.common} data={country} />
       ))}
     </div>
   );

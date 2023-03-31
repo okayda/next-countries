@@ -1,5 +1,5 @@
-import dynamic from "next/dynamic";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 
 import { REGIONS, ALL_REGION_API, SELECT_REGION_API } from "../config";
 
@@ -23,7 +23,7 @@ export default function Home({ countries }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <CardHeader updateRegion={updateRegion} />
+      <CardHeader currRegion={region} updateRegion={updateRegion} />
       <GroupCard countries={countries[region]} />
     </>
   );
