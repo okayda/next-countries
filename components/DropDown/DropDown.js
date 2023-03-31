@@ -2,7 +2,7 @@ import { RiArrowDropUpLine } from "react-icons/ri";
 
 import classes from "./DropDown.module.scss";
 
-const DropDown = function () {
+const DropDown = function ({ updateRegion }) {
   return (
     <div className={classes.dropdown}>
       <div className={classes.dropdown__wrapper}>
@@ -14,19 +14,30 @@ const DropDown = function () {
 
           <ul className={classes.dropdown__list}>
             <li>
-              <button>Africa</button>
+              <button onClick={updateRegion.bind(null, "all")}>All</button>
             </li>
             <li>
-              <button>America</button>
+              <button onClick={updateRegion.bind(null, "africa")}>
+                Africa
+              </button>
             </li>
             <li>
-              <button>Asia</button>
+              <button onClick={updateRegion.bind(null, "america")}>
+                America
+              </button>
             </li>
             <li>
-              <button>Europe</button>
+              <button onClick={updateRegion.bind(null, "asia")}>Asia</button>
             </li>
             <li>
-              <button>Oceania</button>
+              <button onClick={updateRegion.bind(null, "europe")}>
+                Europe
+              </button>
+            </li>
+            <li>
+              <button onClick={updateRegion.bind(null, "oceania")}>
+                Oceania
+              </button>
             </li>
           </ul>
         </div>

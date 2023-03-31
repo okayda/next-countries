@@ -10,8 +10,6 @@ import { BsGlobeAmericas } from "react-icons/bs";
 import { BiArrowBack } from "react-icons/bi";
 
 const CountryDetail = function ({ data }) {
-  console.log(data);
-
   const router = useRouter();
 
   const backHander = function () {
@@ -20,6 +18,7 @@ const CountryDetail = function ({ data }) {
 
   const flag = data.flags.svg;
   const country = data.translations.cym.common;
+  const map = data.maps.googleMaps;
 
   const oneObj = {
     native: Object.values(data.name.nativeName)[0].common,
@@ -50,7 +49,7 @@ const CountryDetail = function ({ data }) {
         <div>
           <div className={classes.detail__title}>
             <h1>{country}</h1>
-            <a href="#">
+            <a href={map} target="_blank">
               Location <BsGlobeAmericas />
             </a>
           </div>

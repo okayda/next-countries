@@ -1,8 +1,19 @@
+import dynamic from "next/dynamic";
+import { useState } from "react";
+
+import { REGIONS, ALL_REGION_API, SELECT_REGION_API } from "../config";
+
 import Head from "next/head";
 import CardHeader from "../components/CardHeader/CardHeader";
-import GroupCard from "../components/Card/GroupCard";
 
 export default function Home({ countries }) {
+  const GroupCard = dynamic(() => import("../components/Card/GroupCard"));
+  const [region, setRegion] = useState("all");
+
+  const updateRegion = function (region) {
+    setRegion(region);
+  };
+
   return (
     <>
       <Head>
@@ -12,20 +23,33 @@ export default function Home({ countries }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <CardHeader />
-
-      <GroupCard countries={countries} />
+      <CardHeader updateRegion={updateRegion} />
+      <GroupCard countries={countries[region]} />
     </>
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch("https://restcountries.com/v3.1/all");
-  const data = await res.json();
+const regionRequest = async function (API) {
+  let res;
+  if (API === "all") res = await fetch(ALL_REGION_API);
+  else res = await fetch(SELECT_REGION_API(API));
 
+  return await res.json();
+};
+
+const regionResponse = async function () {
+  const regionPromises = REGIONS.map((region) => regionRequest(region));
+  const results = await Promise.all(regionPromises);
+
+  return Object.fromEntries(
+    results.map((result, index) => [REGIONS[index], result])
+  );
+};
+
+export async function getStaticProps() {
   return {
     props: {
-      countries: data,
+      countries: await regionResponse(),
     },
   };
 }

@@ -2,11 +2,11 @@ import Search from "../Search/Search";
 import DropDown from "../DropDown/DropDown";
 import classes from "./CardHeader.module.scss";
 
-const CardHeader = function () {
+const CardHeader = function ({ updateRegion }) {
   return (
     <div className={classes.wrapper}>
       <Search />
-      <DropDown />
+      <DropDown updateRegion={updateRegion} />
     </div>
   );
 };

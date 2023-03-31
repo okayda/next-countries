@@ -28,6 +28,10 @@
       width: 1.8rem;
       height: 1.8rem;
     }
+
+    &:hover {
+      background-color: darken($light, 4%);
+    }
   }
 
   &__wrapper {
@@ -88,11 +92,17 @@
 
       background-color: $light;
 
+      letter-spacing: 0.5px;
       font-size: 1.4rem;
       padding: 0.5rem 1rem 0.45rem;
       border-radius: 3px;
       font-weight: 900;
     }
+  }
+
+  a:hover,
+  a:active {
+    background-color: darken($light, 4%);
   }
 
   &__contents {
