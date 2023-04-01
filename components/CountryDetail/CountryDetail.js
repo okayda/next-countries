@@ -9,7 +9,7 @@ import BorderList from "./List/BorderList";
 import { BsGlobeAmericas } from "react-icons/bs";
 import { BiArrowBack } from "react-icons/bi";
 
-const CountryDetail = function ({ data }) {
+const CountryDetail = function ({ data, borders }) {
   const router = useRouter();
 
   const backHander = function () {
@@ -17,7 +17,7 @@ const CountryDetail = function ({ data }) {
   };
 
   const flag = data.flags.svg;
-  const country = data.translations.cym.common;
+  const country = data.name.common;
   const map = data.maps.googleMaps;
 
   const oneObj = {
@@ -49,6 +49,7 @@ const CountryDetail = function ({ data }) {
         <div>
           <div className={classes.detail__title}>
             <h1>{country}</h1>
+
             <a href={map} target="_blank">
               Location <BsGlobeAmericas />
             </a>
@@ -60,6 +61,7 @@ const CountryDetail = function ({ data }) {
                 title={classes["detail__contents--title"]}
                 data={oneObj}
               />
+
               <ListTwo
                 title={classes["detail__contents--title"]}
                 data={twoObj}
@@ -68,6 +70,7 @@ const CountryDetail = function ({ data }) {
 
             <div className={classes.detail__borders}>
               <h2>Border Countries:</h2>
+
               <BorderList />
             </div>
           </div>

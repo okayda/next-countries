@@ -14,5 +14,5 @@ export const SELECT_REGION_API = (region) => {
 };
 
 export const SELECTED_COUNTRY_API = (country) => {
-  return `https://restcountries.com/v3.1/name/${country}`;
+  return `https://restcountries.com/v3.1/name/${country}?fullText=true`;
 };

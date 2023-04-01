@@ -30,11 +30,11 @@ export default function Home({ countries }) {
 }
 
 const regionRequest = async function (API) {
-  let res;
-  if (API === "all") res = await fetch(ALL_REGION_API);
-  else res = await fetch(SELECT_REGION_API(API));
+  let response;
+  if (API === "all") response = await fetch(ALL_REGION_API);
+  else response = await fetch(SELECT_REGION_API(API));
 
-  return await res.json();
+  return await response.json();
 };
 
 const regionResponse = async function () {
