@@ -1,9 +1,11 @@
+import { ALL_REGION_API, SELECTED_COUNTRY_API } from "../../config";
+
 import CountryDetail from "../../components/CountryDetail/CountryDetail";
 
 const DetailPage = function ({ country }) {
   return (
     <>
-      <CountryDetail data={country[0]} />
+      <CountryDetail data={country} />
     </>
   );
 };
@@ -11,7 +13,7 @@ const DetailPage = function ({ country }) {
 export default DetailPage;
 
 export async function getStaticPaths() {
-  const res = await fetch("https://restcountries.com/v3.1/all");
+  const res = await fetch(ALL_REGION_API);
   const data = await res.json();
 
   return {
@@ -25,8 +27,8 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const countryId = context.params.countryId;
 
-  const res = await fetch(`https://restcountries.com/v3.1/name/${countryId}`);
-  const data = await res.json();
+  const res = await fetch(SELECTED_COUNTRY_API(countryId));
+  const [data] = await res.json();
 
   return {
     props: {

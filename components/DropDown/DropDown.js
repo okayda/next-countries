@@ -2,6 +2,8 @@ import { REGIONS } from "../../config";
 import { RiArrowDropUpLine } from "react-icons/ri";
 import classes from "./DropDown.module.scss";
 
+import { BsAsterisk } from "react-icons/bs";
+
 const capitilize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
 const DropDown = function ({ currRegion, updateRegion }) {
@@ -24,6 +26,7 @@ const DropDown = function ({ currRegion, updateRegion }) {
               <li key={region}>
                 <button onClick={() => regionHandler(region)}>
                   {capitilize(region)}
+                  {currRegion === region && <BsAsterisk />}
                 </button>
               </li>
             ))}

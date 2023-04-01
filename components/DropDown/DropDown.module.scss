@@ -82,6 +82,16 @@
     button {
       color: #2a2b2e;
       letter-spacing: 0.4px;
+
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      svg {
+        width: 0.8rem;
+        height: 0.8rem;
+      }
     }
   }
 }
