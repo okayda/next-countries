@@ -9,6 +9,7 @@ body {
   z-index: -100;
   width: 100%;
   height: 100vh;
+  filter: blur(40px);
 }
 
 .circle-bg {
@@ -44,8 +45,6 @@ body {
     width: 100%;
     height: 100vh;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(40px);
-    filter: blur(40px);
     z-index: 1;
     width: 100%;
     height: 100vh;

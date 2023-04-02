@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-
+import NavLink from "next/link";
 import classes from "./CountryDetail.module.scss";
 
 import ListOne from "./List/ListOne";
@@ -8,13 +8,16 @@ import BorderList from "./List/BorderList";
 
 import { BsGlobeAmericas } from "react-icons/bs";
 import { BiArrowBack } from "react-icons/bi";
+import GroupCard from "../Card/GroupCard";
 
 const CountryDetail = function ({ data, borders }) {
   const router = useRouter();
-
   const backHander = function () {
     router.back();
   };
+
+  let borderCountries = borders;
+  if (borders) borderCountries = borders.map((country) => country[0]);
 
   const flag = data.flags.svg;
   const country = data.name.common;
@@ -36,10 +39,13 @@ const CountryDetail = function ({ data, borders }) {
 
   return (
     <div className={classes.detail}>
-      <button onClick={backHander} className={classes.detail__btn}>
-        <BiArrowBack />
-        Back
-      </button>
+      <div className={classes.detail__btn}>
+        <button onClick={backHander}>
+          <BiArrowBack />
+          Back
+        </button>
+        <NavLink href="/">Home</NavLink>
+      </div>
 
       <div className={classes.detail__wrapper}>
         <div className={classes.detail__flag}>
@@ -71,9 +77,13 @@ const CountryDetail = function ({ data, borders }) {
             <div className={classes.detail__borders}>
               <h2>Border Countries:</h2>
 
-              <BorderList />
+              <BorderList borders={borders} />
             </div>
           </div>
+        </div>
+
+        <div className={classes["detail__borders-card"]}>
+          <GroupCard countries={borderCountries} />
         </div>
       </div>
     </div>

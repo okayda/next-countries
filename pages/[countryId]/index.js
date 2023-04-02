@@ -1,4 +1,8 @@
-import { ALL_REGION_API, SELECTED_COUNTRY_API } from "../../config";
+import {
+  ALL_REGION_API,
+  SELECTED_COUNTRY_API,
+  CODE_COUNTRY_API,
+} from "../../config";
 
 import CountryDetail from "../../components/CountryDetail/CountryDetail";
 
@@ -42,12 +46,10 @@ const getSelectedCountry = async function (countryCode) {
 };
 
 const getBorderCountries = async function (country) {
-  if (!country.borders) return "N/A";
+  if (!country.borders) return null;
 
   const borderCountryPromises = country.borders.map(async (border) => {
-    const response = await fetch(
-      `https://restcountries.com/v3.1/alpha/${border}`
-    );
+    const response = await fetch(CODE_COUNTRY_API(border));
     const data = await response.json();
     return data;
   });

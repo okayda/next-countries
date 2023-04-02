@@ -1,5 +1,5 @@
 // import flag from "../../assets/USA.svg";
-import Link from "next/link";
+import NavLink from "next/link";
 import classes from "./Card.module.scss";
 
 const Card = function ({ data }) {
@@ -10,7 +10,7 @@ const Card = function ({ data }) {
   const capital = data.capital || "N/A";
 
   return (
-    <Link href={`/${country}`}>
+    <NavLink href={`/${country}`}>
       <article className={classes.card}>
         <figure>
           <img src={flag} alt={`${country} flag`} />
@@ -38,7 +38,7 @@ const Card = function ({ data }) {
           </ul>
         </section>
       </article>
-    </Link>
+    </NavLink>
   );
 };
 
