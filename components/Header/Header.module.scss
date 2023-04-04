@@ -37,6 +37,14 @@
   a:visited {
     font-size: 1.65rem;
     font-weight: 900;
+
+    @include tablet() {
+      font-size: 1.85rem;
+    }
+
+    @include s-desktop() {
+      font-size: 2rem;
+    }
   }
 
   &__toggle {

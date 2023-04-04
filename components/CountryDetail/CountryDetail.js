@@ -16,6 +16,7 @@ const CountryDetail = function ({ data, borders }) {
     router.back();
   };
 
+  // borders only will have 2 value is either (null or border countries)
   let borderCountries = borders;
   if (borders) borderCountries = borders.map((country) => country[0]);
 
@@ -82,7 +83,7 @@ const CountryDetail = function ({ data, borders }) {
           </div>
         </div>
 
-        <div className={classes["detail__borders-card"]}>
+        <div className={classes["detail__borders-wrapper"]}>
           <GroupCard countries={borderCountries} />
         </div>
       </div>
