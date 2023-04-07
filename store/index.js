@@ -1,12 +1,17 @@
 import { create } from "zustand";
 
 const useStore = create((set) => ({
-  currentRegion: "All",
-  isDropdown: false,
+  currentRegion: "all",
+  currentDrop: false,
 
-  updateDropdown: () =>
+  updateRegion: (region) =>
+    set(() => ({
+      currentRegion: region,
+    })),
+
+  updateDrop: () =>
     set((state) => ({
-      isDropdown: state.isDropdown ? false : true,
+      currentDrop: !state.currentDrop,
     })),
 }));
 

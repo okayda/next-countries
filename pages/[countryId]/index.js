@@ -26,7 +26,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const countryId = params.countryId;
-
   const country = await getSelectedCountry(countryId);
   const borders = await getBorderCountries(country);
 

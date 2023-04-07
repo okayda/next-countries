@@ -8,7 +8,7 @@ import BorderList from "./List/BorderList";
 
 import { BsGlobeAmericas } from "react-icons/bs";
 import { BiArrowBack } from "react-icons/bi";
-import GroupCard from "../Card/GroupCard";
+import GroupCard from "../Card/Group/GroupCard";
 
 const CountryDetail = function ({ data, borders }) {
   const router = useRouter();

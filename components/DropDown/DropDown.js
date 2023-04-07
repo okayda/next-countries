@@ -1,40 +1,44 @@
-import useStore from "../../store";
+import Link from "next/link";
 
-import { useState } from "react";
+import { motion } from "framer-motion";
+import Applied from "../Animation/Applied";
+import { DropListStagger, DropLinkStagger } from "../Animation/Animation";
+
+import useStore from "../../store";
 import { REGIONS } from "../../config";
 import { RiArrowDropUpLine } from "react-icons/ri";
-import classes from "./DropDown.module.scss";
 
+import classes from "./DropDown.module.scss";
 import { BsAsterisk } from "react-icons/bs";
 
 const capitilize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
-const DropDown = function ({ currRegion, updateRegion }) {
-  const isDrop = useStore((state) => state.isDropdown);
-  const updateDrop = useStore((state) => state.updateDropdown);
+const DropDown = function () {
+  const updateRegion = useStore((state) => state.updateRegion);
+  const currentRegion = useStore((state) => state.currentRegion);
 
-  const [isOpen, setOpen] = useState(false);
-
-  const regionHandler = function (region) {
-    if (currRegion === region) return;
-    updateRegion(region);
-  };
-
-  const btnHandler = function () {
-    setOpen((prev) => !prev);
-  };
+  const updateDrop = useStore((state) => state.updateDrop);
+  const currentDrop = useStore((state) => state.currentDrop);
 
   const list = (
-    <ul className={classes.dropdown__list}>
+    <motion.ul
+      className={classes.dropdown__list}
+      {...Applied(DropListStagger)}
+      initial="closed"
+      animate="open"
+    >
       {REGIONS.map((region) => (
-        <li key={region}>
-          <button onClick={() => regionHandler(region)}>
+        <motion.li key={region} variants={DropLinkStagger}>
+          <button
+            onClick={() => updateRegion(region)}
+            className={currentRegion === region ? classes.active : ""}
+          >
             {capitilize(region)}
-            {currRegion === region && <BsAsterisk />}
+            {currentRegion === region && <BsAsterisk />}
           </button>
-        </li>
+        </motion.li>
       ))}
-    </ul>
+    </motion.ul>
   );
 
   return (
@@ -46,7 +50,7 @@ const DropDown = function ({ currRegion, updateRegion }) {
             <RiArrowDropUpLine />
           </button>
 
-          {isDrop && list}
+          {currentDrop && list}
         </div>
       </div>
     </div>

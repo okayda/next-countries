@@ -1,7 +1,8 @@
 import classes from "./GroupCard.module.scss";
-import Card from "./Card";
+import Card from "../Single/Card";
 
 const GroupCard = function ({ countries }) {
+  console.log(countries);
   if (!countries) return;
 
   return (
