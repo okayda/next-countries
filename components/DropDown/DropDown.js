@@ -1,15 +1,10 @@
-import Link from "next/link";
-
-import { motion } from "framer-motion";
-import Applied from "../Animation/Applied";
-import { DropListStagger, DropLinkStagger } from "../Animation/Animation";
-
 import useStore from "../../store";
 import { REGIONS } from "../../config";
 import { RiArrowDropUpLine } from "react-icons/ri";
 
 import classes from "./DropDown.module.scss";
 import { BsAsterisk } from "react-icons/bs";
+import { ListAnimate, FadeList } from "../Animation/Transition";
 
 const capitilize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
@@ -21,14 +16,9 @@ const DropDown = function () {
   const currentDrop = useStore((state) => state.currentDrop);
 
   const list = (
-    <motion.ul
-      className={classes.dropdown__list}
-      {...Applied(DropListStagger)}
-      initial="closed"
-      animate="open"
-    >
+    <ListAnimate className={classes.dropdown__list}>
       {REGIONS.map((region) => (
-        <motion.li key={region} variants={DropLinkStagger}>
+        <FadeList key={region}>
           <button
             onClick={() => updateRegion(region)}
             className={currentRegion === region ? classes.active : ""}
@@ -36,9 +26,9 @@ const DropDown = function () {
             {capitilize(region)}
             {currentRegion === region && <BsAsterisk />}
           </button>
-        </motion.li>
+        </FadeList>
       ))}
-    </motion.ul>
+    </ListAnimate>
   );
 
   return (

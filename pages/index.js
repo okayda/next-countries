@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import useStore from "../store";
 import { REGIONS, ALL_REGION_API, SELECT_REGION_API } from "../config";

@@ -1,18 +1,17 @@
+import { ListTwoDetails } from "./ListData";
+import { SlideList } from "../../Animation/Transition";
+
 const ListTwo = function ({ title, data }) {
+  const list = ListTwoDetails(data);
+
   return (
     <ul>
-      <li>
-        <span className={title}>Top Level Domain: </span>
-        <span>{data.domain}</span>
-      </li>
-      <li>
-        <span className={title}>Currencies: </span>
-        <span>{data.currency}</span>
-      </li>
-      <li>
-        <span className={title}>Languages: </span>
-        <span>{data.languages}</span>
-      </li>
+      {list.map((list, i) => (
+        <SlideList delay={i + 5}>
+          <span className={title}>{list.title}</span>
+          <span>{list.value}</span>
+        </SlideList>
+      ))}
     </ul>
   );
 };

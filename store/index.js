@@ -3,6 +3,7 @@ import { create } from "zustand";
 const useStore = create((set) => ({
   currentRegion: "all",
   currentDrop: false,
+  search: "",
 
   updateRegion: (region) =>
     set(() => ({
@@ -12,6 +13,11 @@ const useStore = create((set) => ({
   updateDrop: () =>
     set((state) => ({
       currentDrop: !state.currentDrop,
+    })),
+
+  updateSearch: (value) =>
+    set(() => ({
+      search: value,
     })),
 }));
 

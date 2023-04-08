@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import NavLink from "next/link";
 import classes from "./CountryDetail.module.scss";
 
+import { SlideImage } from "../Animation/Transition";
+
 import ListOne from "./List/ListOne";
 import ListTwo from "./List/ListTwo";
 import BorderList from "./List/BorderList";
@@ -50,7 +52,7 @@ const CountryDetail = function ({ data, borders }) {
 
       <div className={classes.detail__wrapper}>
         <div className={classes.detail__flag}>
-          <img src={flag} alt="Flag" />
+          <SlideImage src={flag} alt="Flag" />
         </div>
 
         <div>
@@ -84,7 +86,7 @@ const CountryDetail = function ({ data, borders }) {
         </div>
 
         <div className={classes["detail__borders-wrapper"]}>
-          <GroupCard countries={borderCountries} />
+          <GroupCard countries={borderCountries} isReuse={true} />
         </div>
       </div>
     </div>
