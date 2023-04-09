@@ -30,13 +30,26 @@ const GroupCard = function ({ countries, isReuse = false }) {
     return countries;
   };
 
-  return (
-    <div className={classes.group}>
-      {filteredCountries().map((country) => (
-        <Card key={country.name.common} data={country} />
-      ))}
-    </div>
-  );
+  const data = filteredCountries().map((country) => (
+    <Card key={country.name.common} data={country} />
+  ));
+
+  // Checking if the search input does not find any countries for a specific region.
+  const displayCountryOrMessage = function () {
+    // will be true if there is a country other wise search message
+    if (data.length) return data;
+
+    return (
+      <div className={classes.group__message}>
+        <p>
+          No country found matching <strong>"{searchValue}"</strong> in{" "}
+          <strong>{currentRegion}</strong> region.
+        </p>
+      </div>
+    );
+  };
+
+  return <div className={classes.group}>{displayCountryOrMessage()}</div>;
 };
 
 export default GroupCard;
