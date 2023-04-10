@@ -4,10 +4,18 @@ import {
   CODE_COUNTRY_API,
 } from "../../config";
 
+import Head from "next/head";
 import CountryDetail from "../../components/CountryDetail/CountryDetail";
 
 export default function DetailPage({ country, borders }) {
-  return <CountryDetail data={country} borders={borders} />;
+  return (
+    <>
+      <Head>
+        <title>{`${country.name.common} country`}</title>
+      </Head>
+      <CountryDetail data={country} borders={borders} />
+    </>
+  );
 }
 
 export async function getStaticPaths() {

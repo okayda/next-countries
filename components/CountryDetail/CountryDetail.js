@@ -21,7 +21,7 @@ const CountryDetail = function ({ data, borders }) {
     router.back();
   };
 
-  // borders only will have 2 value is either (null or border countries)
+  // The 'borders' field can have only two possible values: 'null' or 'border countries'.
   let borderCountries = borders;
   if (borders) borderCountries = borders.map((country) => country[0]);
 

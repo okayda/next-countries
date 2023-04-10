@@ -20,7 +20,6 @@
     "zustand": "^4.3.7"
   },
   "devDependencies": {
-    "sass": "^1.59.3",
-    "webpack-bundle-analyzer": "^4.8.0"
+    "sass": "^1.59.3"
   }
 }
