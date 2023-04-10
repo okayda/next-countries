@@ -17,6 +17,10 @@
     width: 27rem;
   }
 
+  @include m-desktop() {
+    width: 32rem;
+  }
+
   &__form {
     width: 100%;
 
