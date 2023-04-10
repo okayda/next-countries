@@ -23,8 +23,7 @@ const CountryDetail = function ({ data, borders }) {
 
   // The 'borders' field can have only two possible values: 'null' or 'border countries'.
   let borderCountries = borders;
-  if (borders !== "No Borders")
-    borderCountries = borders.map((country) => country[0]);
+  if (borders) borderCountries = borders.map((country) => country[0]);
 
   const flag = data.flags.svg;
   const country = data.name.common;
