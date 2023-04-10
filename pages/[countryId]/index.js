@@ -57,7 +57,7 @@ const getSelectedCountry = async function (countryCode) {
 };
 
 const getBorderCountries = async function (country) {
-  if (country.borders === undefined || country.borders === null) return null;
+  if (!country.borders) return null;
 
   const borderCountryPromises = country.borders.map(async (border) => {
     const response = await fetch(CODE_COUNTRY_API(border));

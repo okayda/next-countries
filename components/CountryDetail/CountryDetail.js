@@ -39,7 +39,7 @@ const CountryDetail = function ({ data, borders }) {
 
   const twoObj = {
     domain: data.tld || "N/A",
-    currency: Object.values(data.currencies)[0].name,
+    currency: data.currencies ? Object.values(data.currencies)[0].name : "N/A",
     languages: Object.values(data.languages).join(", "),
   };
 
