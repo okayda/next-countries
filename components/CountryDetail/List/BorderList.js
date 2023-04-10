@@ -12,7 +12,7 @@ const BorderList = function ({ borders, classes }) {
   else
     renderBorder = (
       <li>
-        <span className={classes["border-msg"]}>No Borders</span>
+        <span className={classes["border-msg"]}>{borders}</span>
       </li>
     );
 
