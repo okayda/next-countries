@@ -1,6 +1,6 @@
 import { SlideBorder } from "../../Animation/Transition";
 
-const BorderList = function ({ borders }) {
+const BorderList = function ({ borders, classes }) {
   let renderBorder;
 
   if (borders)
@@ -12,7 +12,7 @@ const BorderList = function ({ borders }) {
   else
     renderBorder = (
       <li>
-        <span>No Borders</span>
+        <span className={classes["border-msg"]}>No Borders</span>
       </li>
     );
 

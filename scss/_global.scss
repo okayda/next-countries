@@ -31,6 +31,7 @@ html {
 }
 
 body {
+  transition: background-color 400ms linear;
   box-sizing: border-box;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -98,6 +99,12 @@ a:visited {
   }
 }
 
-// #background {
-//   background-image: linear-gradient(to bottom, #1d1e22, #444857);
-// }
+.card-link:link,
+.card-link:visited {
+  transition: all 0.4s;
+}
+
+.card-link:hover,
+.card-link:active {
+  transform: translateY(-16px);
+}

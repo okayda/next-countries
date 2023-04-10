@@ -1,6 +1,10 @@
+import useStore from "../store";
+
 const Background = function () {
+  const theme = useStore((state) => state.theme);
+
   return (
-    <div id="background">
+    <div className="background" id={theme ? "bg-dark" : "bg-light"}>
       <div className="circle-bg">
         <div className="circle-1"></div>
         <div className="circle-2"></div>

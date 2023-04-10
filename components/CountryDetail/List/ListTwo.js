@@ -7,8 +7,8 @@ const ListTwo = function ({ title, data }) {
   return (
     <ul>
       {list.map((list, i) => (
-        <SlideList delay={i + 5}>
-          <span className={title}>{list.title}</span>
+        <SlideList key={i} delay={i + 5}>
+          <span className={title}>{list.title} </span>
           <span>{list.value}</span>
         </SlideList>
       ))}

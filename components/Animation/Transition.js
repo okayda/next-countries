@@ -8,11 +8,12 @@ import {
   slideBorder,
 } from "./Animation";
 
-export const ListAnimate = function ({ children, className = null }) {
+export const ListAnimate = function ({ children, id, className = null }) {
   return (
     <motion.ul
       {...Applied(parentStagger)}
       className={className}
+      id={id}
       initial="closed"
       animate="open"
     >

@@ -16,17 +16,16 @@ const GroupCard = function ({ countries, isReuse = false }) {
   const filteredCountries = function () {
     // **Will activated**
     // if the search bar have a value
-    // if not reuse(false) means not used in border countries as a component
+    // if not reuse(false) means not used in border countries as a component(GroupCard.js)
     if (!isReuse && searchValue) {
       return countries.filter((country) => {
-        if (searchValue === "") return country;
         if (isContain(searchValue, country)) return country;
       });
     }
 
     // **Will activated**
     // if there is no search value in the search bar
-    // if reuse(true) means was used for border countries as a component
+    // if reuse(true) means was used for border countries as a component(GroupCard.js)
     return countries;
   };
 

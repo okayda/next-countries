@@ -3,6 +3,7 @@ import { create } from "zustand";
 const useStore = create((set) => ({
   currentRegion: "all",
   currentDrop: false,
+  theme: false, // false = light theme
   search: "",
 
   updateRegion: (region) =>
@@ -13,6 +14,11 @@ const useStore = create((set) => ({
   updateDrop: () =>
     set((state) => ({
       currentDrop: !state.currentDrop,
+    })),
+
+  updateTheme: () =>
+    set((state) => ({
+      theme: !state.theme,
     })),
 
   updateSearch: (value) =>

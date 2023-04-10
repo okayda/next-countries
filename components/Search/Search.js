@@ -4,6 +4,8 @@ import { FcSearch } from "react-icons/fc";
 import classes from "./Search.module.scss";
 
 const Search = function () {
+  const theme = useStore((state) => state.theme);
+
   const { updateSearch, search } = useStore((state) => state);
 
   const filterCountry = function (str) {
@@ -12,7 +14,10 @@ const Search = function () {
 
   return (
     <div className={classes.search}>
-      <form action="" method="get" className={classes.search__form}>
+      <form
+        className={classes.search__form}
+        id={theme ? "search-dark" : "search-light"}
+      >
         <div>
           <input
             type="search"
@@ -26,9 +31,9 @@ const Search = function () {
             }}
           />
 
-          <button className={classes.search__submit}>
+          <span className={classes.search__submit}>
             <FcSearch />
-          </button>
+          </span>
         </div>
       </form>
     </div>

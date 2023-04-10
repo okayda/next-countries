@@ -1,0 +1,163 @@
+@use "../scss" as *;
+// Default = light (false)
+
+body[data-theme="light"] {
+  background: $light-gradient-background;
+}
+
+body[data-theme="dark"] {
+  background: $dark-background;
+}
+
+#bg-dark {
+  display: none;
+}
+
+#bg-light {
+  display: block;
+}
+
+#header-dark {
+  background: $dark-mode;
+  border: 1px solid $dark-mode;
+  backdrop-filter: blur(0);
+  transition: background-color 400ms linear;
+
+  a:link,
+  a:visited {
+    color: $light-text;
+  }
+}
+
+#header-light {
+  background: rgba($light-background, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.01) 0px 2px 5px, rgba(0, 0, 0, 0.08) 0px 2px 5px;
+  border: 1px solid rgba($light-background, 0.9);
+  backdrop-filter: blur(5px);
+
+  a:link,
+  a:visited {
+    color: $dark-text;
+  }
+}
+
+#search-dark {
+  background: $dark-mode;
+  backdrop-filter: blur(0);
+
+  ::placeholder {
+    color: $light-text;
+  }
+
+  input[type="search"] {
+    background: $dark-mode;
+    color: $light-text;
+  }
+}
+
+#search-light {
+  background: $light-background;
+  backdrop-filter: blur(5px);
+
+  ::placeholder {
+    color: #444;
+  }
+
+  input[type="search"] {
+    background: $light-background;
+    color: #42454e;
+  }
+}
+
+#btndrop-dark {
+  background: $dark-mode;
+  color: $light-text;
+}
+
+#btndrop-light {
+  background: $light-background;
+  color: $dark-text;
+}
+
+#listdrop-dark {
+  background: $dark-mode;
+  backdrop-filter: blur(0);
+
+  button {
+    color: $light-text;
+  }
+}
+
+#listdrop-light {
+  background: rgba($light-background, 0.8);
+  backdrop-filter: blur(5px);
+  color: $dark-text;
+}
+
+#card-dark {
+  background: $dark-mode;
+  backdrop-filter: blur(0);
+  border: 1px solid rgba(43, 57, 69, 0.85);
+  color: $light-text;
+}
+
+#card-light {
+  background: rgba($light-background, 0.25);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba($light-background, 0.85);
+  color: $dark-text;
+}
+
+#detail-dark {
+  h1,
+  h2,
+  span {
+    color: $light-text;
+  }
+
+  button,
+  a:link,
+  a:visited {
+    color: $light-text;
+  }
+}
+
+#detail-light {
+  h1,
+  h2,
+  span {
+    color: $dark-text;
+  }
+}
+
+#detailbtn-dark {
+  button,
+  a:link,
+  a:visited {
+    background: $dark-mode;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+
+  button:hover,
+  a:hover,
+  a:active {
+    background: darken($dark-background, 4%);
+  }
+}
+
+#detailbtn-light {
+  button,
+  a:link,
+  a:visited {
+    background: $light-background;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
+
+  button:hover,
+  a:hover,
+  a:active {
+    background: darken($light-background, 4%);
+  }
+}

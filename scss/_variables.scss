@@ -1,15 +1,14 @@
 $dark-mode: hsl(209, 23%, 22%);
 $dark-background: hsl(207, 26%, 17%);
-$dark-text: hsl(200, 15%, 8%);
-$dark-light: hsl(0, 0%, 52%);
-$light-mode: hsl(0, 0%, 98%);
-$light: hsl(0, 0%, 100%);
+
+$light-background: hsl(0, 0%, 100%);
+$light-gradient-background: linear-gradient(90deg, #faecec 0, #eceefb 58%);
+
+$light-text: hsl(0, 0%, 95%);
+$dark-text: hsl(0, 0%, 0%);
 
 // Gourp card max-width
 $t-max: 55.4rem;
 $s-max: 87.14rem;
 $m-max: 117.3rem;
 $l-max: 148rem;
-
-$shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-  rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;

@@ -1,10 +1,6 @@
 @use "./index" as *;
 
-body {
-  background: linear-gradient(90deg, #faecec 0, #eceefb 58%);
-}
-
-#background {
+.background {
   position: fixed;
   z-index: -100;
   width: 100%;

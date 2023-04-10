@@ -1,3 +1,4 @@
+import useStore from "../../store";
 import { useRouter } from "next/router";
 import NavLink from "next/link";
 import classes from "./CountryDetail.module.scss";
@@ -13,6 +14,8 @@ import { BiArrowBack } from "react-icons/bi";
 import GroupCard from "../Card/Group/GroupCard";
 
 const CountryDetail = function ({ data, borders }) {
+  const theme = useStore((state) => state.theme);
+
   const router = useRouter();
   const backHander = function () {
     router.back();
@@ -28,7 +31,7 @@ const CountryDetail = function ({ data, borders }) {
 
   const oneObj = {
     native: Object.values(data.name.nativeName)[0].common,
-    population: data.population,
+    population: data.population.toLocaleString("en-US"),
     region: data.region,
     subregion: data.subregion,
     capital: data.capital || "N/A",
@@ -41,8 +44,11 @@ const CountryDetail = function ({ data, borders }) {
   };
 
   return (
-    <div className={classes.detail}>
-      <div className={classes.detail__btn}>
+    <div className={classes.detail} id={theme ? "detail-dark" : "detail-light"}>
+      <div
+        className={classes.detail__btn}
+        id={theme ? "detailbtn-dark" : "detailbtn-light"}
+      >
         <button onClick={backHander}>
           <BiArrowBack />
           Back
@@ -56,7 +62,10 @@ const CountryDetail = function ({ data, borders }) {
         </div>
 
         <div>
-          <div className={classes.detail__title}>
+          <div
+            className={classes.detail__title}
+            id={theme ? "detailbtn-dark" : "detailbtn-light"}
+          >
             <h1>{country}</h1>
 
             <a href={map} target="_blank">
@@ -80,7 +89,7 @@ const CountryDetail = function ({ data, borders }) {
             <div className={classes.detail__borders}>
               <h2>Border Countries:</h2>
 
-              <BorderList borders={borders} />
+              <BorderList borders={borders} classes={classes} />
             </div>
           </div>
         </div>

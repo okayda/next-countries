@@ -9,6 +9,8 @@ import { ListAnimate, FadeList } from "../Animation/Transition";
 const capitilize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
 const DropDown = function () {
+  const theme = useStore((state) => state.theme);
+
   const updateRegion = useStore((state) => state.updateRegion);
   const currentRegion = useStore((state) => state.currentRegion);
 
@@ -16,7 +18,10 @@ const DropDown = function () {
   const currentDrop = useStore((state) => state.currentDrop);
 
   const list = (
-    <ListAnimate className={classes.dropdown__list}>
+    <ListAnimate
+      className={classes.dropdown__list}
+      id={theme ? "listdrop-dark" : "listdrop-light"}
+    >
       {REGIONS.map((region) => (
         <FadeList key={region}>
           <button
@@ -35,7 +40,11 @@ const DropDown = function () {
     <div className={classes.dropdown}>
       <div className={classes.dropdown__wrapper}>
         <div className={classes.dropdown__contents}>
-          <button className={classes.dropdown__btn} onClick={updateDrop}>
+          <button
+            className={classes.dropdown__btn}
+            id={theme ? "btndrop-dark" : "btndrop-light"}
+            onClick={updateDrop}
+          >
             Filters by Region
             <RiArrowDropUpLine />
           </button>
