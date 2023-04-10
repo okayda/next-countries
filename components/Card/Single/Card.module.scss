@@ -10,8 +10,8 @@
 
   figure {
     img {
-      width: 260px;
-      height: 170px;
+      width: 26rem;
+      height: 17rem;
       object-fit: cover;
     }
   }
@@ -21,11 +21,12 @@
 
     h2 {
       font-weight: 900;
-      font-size: 1.74rem;
+      font-size: 1.8rem;
       margin-bottom: 1.4rem;
+      letter-spacing: 0.5px;
     }
     ul {
-      font-size: 1.45rem;
+      font-size: 1.55rem;
     }
 
     &--title {

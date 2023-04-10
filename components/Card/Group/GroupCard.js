@@ -8,6 +8,8 @@ const isContain = function (search, country) {
 };
 
 const GroupCard = function ({ countries, isReuse = false }) {
+  const theme = useStore((state) => state.theme);
+
   if (!countries) return;
 
   const currentRegion = useStore((state) => state.currentRegion);
@@ -39,10 +41,13 @@ const GroupCard = function ({ countries, isReuse = false }) {
     if (data.length) return data;
 
     return (
-      <div className={classes.group__message}>
+      <div
+        className={classes.group__message}
+        id={theme ? "message-dark" : "message-light"}
+      >
         <p>
-          No country found matching <strong>"{searchValue}"</strong> in{" "}
-          <strong>{currentRegion}</strong> region.
+          No country found matching <span>"{searchValue}"</span> in{" "}
+          <span>{currentRegion}</span> region.
         </p>
       </div>
     );
