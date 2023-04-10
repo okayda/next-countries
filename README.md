@@ -2,7 +2,7 @@
 
 ![](./screenshot.jpg)
 
-This is my solution to the [REST Countries API with theme switcher](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
+This is my solution to the [REST Countries API with theme switcher](https://www.frontendmentor.io/solutions/rest-countries-project-tZvVK7Fr4S)
 
 ## The challenge
 
@@ -17,7 +17,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/rest-countries-project-tZvVK7Fr4S)
 - Live Site URL: [Add live site URL here](https://jhon-okayda-countries-project.vercel.app)
 
 ### Built with
