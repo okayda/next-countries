@@ -18,7 +18,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
-- Live Site URL: [Add live site URL here](https://jhon-okayda-countries-project-4902pl246-okayda.vercel.app/)
+- Live Site URL: [Add live site URL here](https://jhon-okayda-countries-project-4902pl246-okayda.vercel.app)
 
 ### Built with
 
