@@ -11,6 +11,10 @@ export default function DetailPage({ country, borders }) {
   return (
     <>
       <Head>
+        <meta
+          name="description"
+          content={`Details about ${country.name.common}`}
+        />
         <title>{`${country.name.common} country`}</title>
       </Head>
       <CountryDetail data={country} borders={borders} />
