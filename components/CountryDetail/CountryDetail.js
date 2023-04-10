@@ -28,9 +28,11 @@ const CountryDetail = function ({ data, borders }) {
   const flag = data.flags.svg;
   const country = data.name.common;
   const map = data.maps.googleMaps;
+  const native = data.name.nativeName;
+  const languages = data.languages;
 
   const oneObj = {
-    native: Object.values(data.name.nativeName)[0].common,
+    native: native ? Object.values(native)[0].common : "N/A",
     population: data.population.toLocaleString("en-US"),
     region: data.region,
     subregion: data.subregion,
@@ -40,7 +42,7 @@ const CountryDetail = function ({ data, borders }) {
   const twoObj = {
     domain: data.tld || "N/A",
     currency: data.currencies ? Object.values(data.currencies)[0].name : "N/A",
-    languages: Object.values(data.languages).join(", "),
+    languages: languages ? Object.values(languages).join(", ") : "N/A",
   };
 
   return (
